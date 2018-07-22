@@ -20,10 +20,19 @@ public class StringUtil {
         return arr == null || arr.length == 0;
     }
 
+    /**
+     * transfer string array to int array
+     * @param arr string array
+     * @return int array
+     */
     public static int[] stringArray2IntArray(String[] arr) {
         int[] result = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            result[i] = Integer.valueOf(arr[i]);
+            try {
+                result[i] = Integer.valueOf(arr[i]);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
         }
         return result;
     }
