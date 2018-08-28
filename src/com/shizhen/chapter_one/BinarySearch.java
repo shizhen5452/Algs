@@ -1,4 +1,4 @@
-package com.shizhen;
+package com.shizhen.chapter_one;
 
 import com.shizhen.util.IOUtil;
 import com.shizhen.util.StringUtil;
