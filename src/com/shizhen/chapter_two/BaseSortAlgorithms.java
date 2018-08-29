@@ -3,11 +3,9 @@ package com.shizhen.chapter_two;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
- * The base class for sort algorithms
+ * The base class for selectSort algorithms
  */
-public abstract class BaseSortAlgorithms {
-
-    protected abstract void sort(Comparable[] a);
+public class BaseSortAlgorithms {
 
     protected static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
@@ -16,10 +14,10 @@ public abstract class BaseSortAlgorithms {
     protected static void exch(Comparable[] a, int i, int j) {
         Comparable t = a[i];
         a[i] = a[j];
-        a[j] = a[i];
+        a[j] = t;
     }
 
-    protected static void show(Comparable[] a) {
+    public static void show(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             StdOut.print(a[i] + " ");
         }
