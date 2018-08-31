@@ -14,8 +14,10 @@ public class SortCompare {
                 JuniorSortAlgorithms.selectSort(a);
                 break;
             case "Shell":
+                JuniorSortAlgorithms.shellSort(a);
                 break;
             case "Merge":
+                MergeSortAlgorithms.sort(a);
                 break;
             case "Quick":
                 break;
