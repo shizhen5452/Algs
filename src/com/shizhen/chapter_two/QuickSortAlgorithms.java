@@ -49,10 +49,31 @@ public class QuickSortAlgorithms extends BaseSortAlgorithms {
     }
 
     /**
-     *
+     * Three way quick sort
      */
     public static void sort2(Comparable[] a, int lo, int hi) {
-
+        if (lo + 1 >= hi) {
+            return;
+        }
+        int left = lo;
+        int mid=lo+1;
+        int right = hi;
+        Comparable value = a[lo];
+        while (mid <= right) {
+            int res = a[mid].compareTo(value);
+            if (res == 0) {
+                mid++;
+            } else if (res > 0) {
+                exch(a,mid,right);
+                right--;
+            } else {
+                exch(a,left,mid);
+                left++;
+                mid++;
+            }
+        }
+        sort2(a,lo,mid-1);
+        sort2(a,right+1,hi);
     }
 
 }
