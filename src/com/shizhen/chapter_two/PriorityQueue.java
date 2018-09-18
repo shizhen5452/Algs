@@ -34,23 +34,24 @@ public class PriorityQueue extends BaseSortAlgorithms {
         }
 
         private void insert(Key v) {
-
-        }
-
-        public Key max() {
-            return null;
+            pq[++N] = v;
+            swim(N);
         }
 
         private Key delMax() {
+            Key max = pq[1];
+            exch(1,N--);
+            pq[N+1] = null;
+            sink(1);
             return null;
         }
 
         private boolean isEmpty() {
-            return false;
+            return N==0;
         }
 
         private int size() {
-            return 0;
+            return N;
         }
 
         private boolean less(int i, int j) {
