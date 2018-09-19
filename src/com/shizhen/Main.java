@@ -3,15 +3,17 @@ package com.shizhen;
 public class Main {
 
     public static void main(String[] args) {
-        ChapterOneTest();
-        ChapterTwoTest();
+        chapterOneTest();
+        chapterTwoTest();
+        chapterThreeTest();
     }
 
-    private static void ChapterOneTest() {
+
+    private static void chapterOneTest() {
         //BinarySearch.test(args);
     }
 
-    private static void ChapterTwoTest() {
+    private static void chapterTwoTest() {
         //String[] strArr = {"s","o","r","t","e","x","a","m","p","l","e"};
         //JuniorSortAlgorithms.selectSort(strArr);
         //JuniorSortAlgorithms.insertSort(strArr);
@@ -30,4 +32,9 @@ public class Main {
         //StdOut.printf("%s consumes %f s \n","Merge",t4);
         //StdOut.printf("%s consumes %f s \n","Quick",t5);
     }
+
+    private static void chapterThreeTest() {
+
+    }
+
 }
