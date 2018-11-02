@@ -6,8 +6,8 @@ public class Main {
         chapterOneTest();
         chapterTwoTest();
         chapterThreeTest();
+        chapterFourTest();
     }
-
 
     private static void chapterOneTest() {
         //BinarySearch.test(args);
@@ -34,6 +34,10 @@ public class Main {
     }
 
     private static void chapterThreeTest() {
+
+    }
+
+    private static void chapterFourTest() {
 
     }
 
