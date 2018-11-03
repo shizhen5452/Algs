@@ -1,7 +1,6 @@
 package com.shizhen.chapter_four;
 
 import com.shizhen.chapter_one.UF;
-import edu.princeton.cs.algs4.StdOut;
 
 public class Search {
     private int s;
@@ -25,7 +24,6 @@ public class Search {
     }
 
     public int count() {
-        StdOut.println("--" + uf.count());
-        return 0;
+        return uf.vCount();
     }
 }

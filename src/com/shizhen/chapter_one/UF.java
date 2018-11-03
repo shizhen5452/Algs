@@ -1,9 +1,5 @@
 package com.shizhen.chapter_one;
 
-import com.shizhen.util.Constant;
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdOut;
-
 public class UF {
 
     private int count;
@@ -24,6 +20,10 @@ public class UF {
 
     public int count() {
         return count;
+    }
+
+    public int vCount() {
+        return sz[find(0)];
     }
 
     public boolean connected(int p, int q) {
@@ -53,24 +53,4 @@ public class UF {
         count--;
     }
 
-    public static void main(String[] args) {
-        In in = new In(Constant.DIR + "mediumUF.txt");
-        int N = in.readInt();
-        UF uf = new UF(N);
-        boolean b = true;
-        while (b) {
-            try {
-                int p = in.readInt();
-                int q = in.readInt();
-                if (uf.connected(p, q)) {
-                    continue;
-                }
-                uf.union(p, q);
-                StdOut.println(p + " " + q);
-            } catch (Exception e) {
-                b = false;
-            }
-        }
-        StdOut.println(uf.count() + " components");
-    }
 }
