@@ -14,16 +14,16 @@ public class DepthFirstPaths {
         this.s = s;
         marked = new boolean[G.V()];
         edgeTo = new int[G.V()];
-        dfs(G,s);
+        dfs(G, s);
     }
 
     private void dfs(Graph G, int v) {
         marked[v] = true;
         count++;
         for (Integer w : G.adj(v)) {
-            if (!marked[w]){
+            if (!marked[w]) {
                 edgeTo[w] = v;
-                dfs(G,w);
+                dfs(G, w);
             }
         }
     }
