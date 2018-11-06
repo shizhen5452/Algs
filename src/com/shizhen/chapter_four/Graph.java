@@ -2,6 +2,7 @@ package com.shizhen.chapter_four;
 
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Stack;
 
 public class Graph {
     private int V;//顶点数目
@@ -27,6 +28,20 @@ public class Graph {
         }
     }
 
+    public Graph(Graph G) {
+        this(G.V());
+        this.E = G.E();
+        for (int v = 0; v < G.V(); v++) {
+            Stack<Integer> stack = new Stack<>();
+            for (Integer w : G.adj(v)) {
+                stack.push(w);
+            }
+            for (Integer w : stack) {
+                adj[v].add(w);
+            }
+        }
+    }
+
     public int V() {
         return V;
     }
@@ -35,7 +50,7 @@ public class Graph {
         return E;
     }
 
-    private void addEdge(int v, int w) {
+    public void addEdge(int v, int w) {
         adj[v].add(w);
         adj[w].add(v);
         E++;

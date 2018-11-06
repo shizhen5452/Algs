@@ -1,23 +1,53 @@
 package com.shizhen.chapter_four;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.ST;
+
 public class SymbolGraph {
+    private ST<String, Integer> st;//符号名 -> 索引
+    private String[] keys;         //索引   -> 符号名
+    private Graph G;
 
     public SymbolGraph(String fileName, String delim) {
+        st = new ST<>();
+        In in = new In(fileName);
+        while (in.hasNextLine()) {
+            String[] split = in.readLine().split(delim);
+            for (int i = 0; i < split.length; i++) {
+                if (!st.contains(split[i])) {
+                    st.put(split[i], st.size());
+                }
+            }
+        }
+        keys = new String[st.size()];
+        for (String key : st.keys()) {
+            keys[st.get(key)] = key;
+        }
+
+        G = new Graph(st.size());
+        in = new In(fileName);
+        while (in.hasNextLine()) {
+            String[] split = in.readLine().split(delim);
+            int v = st.get(split[0]);
+            for (int i = 1; i < split.length; i++) {
+                G.addEdge(v, st.get(split[i]));
+            }
+        }
     }
 
     public boolean contains(String key) {
-        return false;
+        return st.contains(key);
     }
 
     public int index(String key) {
-        return 0;
+        return st.get(key);
     }
 
     public String name(int v) {
-        return "";
+        return keys[v];
     }
 
     public Graph G() {
-        return new Graph(0);
+        return G;
     }
 }

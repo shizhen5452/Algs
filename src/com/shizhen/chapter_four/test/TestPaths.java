@@ -25,6 +25,9 @@ public class TestPaths {
             }
             StdOut.println();
         }
+
+        int v = 4;
+        StdOut.println("dist from " + s + " to " + v + " is " + search.distTo(v));
     }
 
 }
