@@ -1,4 +1,4 @@
-package com.shizhen.chapter_four;
+package com.shizhen.chapter_four.section_one;
 
 
 import edu.princeton.cs.algs4.Stack;

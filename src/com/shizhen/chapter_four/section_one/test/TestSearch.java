@@ -1,7 +1,7 @@
-package com.shizhen.chapter_four.test;
+package com.shizhen.chapter_four.section_one.test;
 
-import com.shizhen.chapter_four.Graph;
-import com.shizhen.chapter_four.Search;
+import com.shizhen.chapter_four.section_one.Graph;
+import com.shizhen.chapter_four.section_one.Search;
 import com.shizhen.util.Constant;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;

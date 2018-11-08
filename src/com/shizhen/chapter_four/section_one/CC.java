@@ -1,4 +1,4 @@
-package com.shizhen.chapter_four;
+package com.shizhen.chapter_four.section_one;
 
 public class CC {
     private boolean[] marked;
