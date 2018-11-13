@@ -4,10 +4,10 @@ package com.shizhen.chapter_four.section_one;
 import edu.princeton.cs.algs4.Stack;
 
 public class DepthFirstPaths {
-    private boolean[] marked;
+    private boolean[] marked;//顶点是否访问过的列表
     private int count;
-    private int s;
-    private int[] edgeTo;
+    private int s;           //起点
+    private int[] edgeTo;    //到达该顶点的已知路径上的最后一个顶点
 
 
     public DepthFirstPaths(Graph G, int s) {
