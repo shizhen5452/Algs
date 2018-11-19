@@ -35,7 +35,7 @@ public class DiGraph {
         return E;
     }
 
-    private void addEdge(int v, int w) {
+    public void addEdge(int v, int w) {
         adj[v].add(w);
         E++;
     }
