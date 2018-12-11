@@ -1,5 +1,7 @@
 package com.shizhen.chapter_four.section_two;
 
+import com.shizhen.chapter_four.section_four.DirectedEdge;
+import com.shizhen.chapter_four.section_four.EdgeWeightedDiagraph;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
 
@@ -21,10 +23,35 @@ public class DepthFirstOrder {
         }
     }
 
+    public DepthFirstOrder(EdgeWeightedDiagraph G) {
+        marked = new boolean[G.V()];
+        pre = new Queue<>();
+        post = new Queue<>();
+        reversePost = new Stack<>();
+        for (int v = 0; v < G.V(); v++) {
+            if (!marked[v]) {
+                dfs(G, v);
+            }
+        }
+    }
+
     private void dfs(DiGraph G, int v) {
         pre.enqueue(v);
         marked[v] = true;
         for (Integer w : G.adj(v)) {
+            if (!marked[w]) {
+                dfs(G, w);
+            }
+        }
+        post.enqueue(v);
+        reversePost.push(v);
+    }
+
+    private void dfs(EdgeWeightedDiagraph G, int v) {
+        pre.enqueue(v);
+        marked[v] = true;
+        for (DirectedEdge e : G.adj(v)) {
+            int w = e.to();
             if (!marked[w]) {
                 dfs(G, w);
             }

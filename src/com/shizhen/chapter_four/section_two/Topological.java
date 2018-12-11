@@ -1,5 +1,7 @@
 package com.shizhen.chapter_four.section_two;
 
+import com.shizhen.chapter_four.section_four.EdgeWeightedDiagraph;
+import com.shizhen.chapter_four.section_four.EdgeWeightedDirectedCycle;
 import com.shizhen.util.Constant;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -9,6 +11,14 @@ public class Topological {
 
     public Topological(DiGraph G) {
         DirectedCycle cycle = new DirectedCycle(G);
+        if (!cycle.hasCycle()) {
+            DepthFirstOrder dfo = new DepthFirstOrder(G);
+            order = dfo.reversePost();
+        }
+    }
+
+    public Topological(EdgeWeightedDiagraph G) {
+        EdgeWeightedDirectedCycle cycle = new EdgeWeightedDirectedCycle(G);
         if (!cycle.hasCycle()) {
             DepthFirstOrder dfo = new DepthFirstOrder(G);
             order = dfo.reversePost();
