@@ -1,4 +1,4 @@
-package com.shizhen.chapter_three;
+package com.shizhen.chapter_three.section_two;
 
 public class BST<Key extends Comparable<Key>, Value> {
     private Node root;
